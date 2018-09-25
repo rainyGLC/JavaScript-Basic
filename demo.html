@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+ 
+<body>
+</body>
+<script>
+    //随机取10-100中三个值，存入一个数组，并排序
+    function getRandom(minNum, maxNum) {
+        switch (arguments.length) {
+            case 1:
+                return Math.floor(Math.random() * minNum);
+                break;
+            case 2:
+                return Math.floor(Math.random() * (maxNum - minNum + 1) + minNum);
+                break;
+            default:
+                return 0;
+                break;
+        }
+    }
+    //声明一个空数组
+    var array = [];
+    //获取10-100之间的10个随机数，并存入数组
+    for (var i = 0; i < 10; i++) {
+        array.push(getRandom(10, 100));
+    }
+    //升序排列
+    alert(array.sort(function (x, y) {
+        return x - y;
+    }));
+    //降序排列
+    alert(array.sort(function (x, y) {
+        return y - x;
+    }))
+</script>
+<!-- Math.ceil();  //向上取整。
+
+Math.floor();  //向下取整。
+
+Math.round();  //四舍五入。
+
+Math.random();  //0.0 ~ 1.0 之间的一个伪随机数。【包含0不包含1】 //比如0.8647578968666494
+
+Math.ceil(Math.random()*10);      // 获取从1到10的随机整数 ，取0的概率极小。
+
+Math.round(Math.random());   //可均衡获取0到1的随机整数。
+
+Math.floor(Math.random()*10);  //可均衡获取0到9的随机整数。
+
+Math.round(Math.random()*10);  //基本均衡获取0到10的随机整数，其中获取最小值0和最大值10的几率少一半。
+
+因为结果在0~0.4 为0，0.5到1.4为1...8.5到9.4为9，9.5到9.9为10。所以头尾的分布区间只有其他数字的一半。 -->
+</html>
