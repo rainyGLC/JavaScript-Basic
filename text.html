@@ -6,7 +6,6 @@
 </head>
 
 <body>
-<div></div>
 <script type="text/javascript">
 	// let arr = [1, 2, 3, 4]
 	// let tmp = arr.splice(2, 3, 6);
@@ -30,6 +29,7 @@
 	// console.log(tmp)
 	// var tmp = [1,2,3,4].reduce((result,item,index,arr) => result);
  //    console.log(tmp)
+<<<<<<< HEAD
        // var arr = [1,2,3,4]
        // var tmp = arr.splice(1,3,5);
        // console.log(tmp);
@@ -50,7 +50,184 @@
 // const newArr = [];
 // ary.map((item) => newArr.findIndex(({ a }) => a === item.a) === -1 && newArr.push(item));
 // console.log(newArr);
+=======
+ 	// var words =["one", "two", "three", "four"];
+ 	// words.forEach(function(word){
+ 	// 	console.log(word);
+ 	// 	if(word === "two"){
+ 	// 		words.shift();
+ 	// 	}
+ 	// })
+ 	// const myStacks = [{
+		// 	id:1,
+		// 	name: 'javascript',
+		// 	level:2,
+		// },{
+		// 	id:2,
+		// 	name: 'css',
+		// 	level:1,
+		// },{
+		// 	id:4,
+		// 	name:'JQuery',
+		// 	level:1,
+		// }]
+		// const jobStacks = [{
+		// 	id:1,
+		// 	name:'javascript',
+		// 	level:1,
+		// },{
+		// 	id:2,
+		// 	name:'css',
+		// 	level:3,
+		// },{
+		// 	id:3,
+		// 	name:'HTML',
+		// 	level:2,
+		// }]
+		// function output(Arr1,Arr2) {
+		// 	let resultArr = Arr2.map(function(data,index, array){
+		// 		let active = Arr1.some(item => item.id == data.id && item.level > data.level)
+		// 		if (active){
+		// 		  		data['active'] = true;
+		// 		  		Arr1.push(data);
+		// 		  	}else{
+		// 		  		data['active'] = false;
+		// 		  		Arr1.push(data);
+		// 		  	} 
+		// 		return (data);
+		// 	})
+		// 	console.log(resultArr);
 
+		// }
+		// output(myStacks,jobStacks);
+		// const Stacks[
+		// {
+		// 	id:1,
+		// 	name:'javascript',
+		// 	level:1,
+		// 	active:true
+		// },{
+		// 	id:2,
+		// 	name:'css',
+		// 	level:3,
+		// 	active:false
+		// },{
+		// 	id:3,
+		// 	name:'HTML',
+		// 	level:2,
+		// 	active:true
+		// },{
+		// 	id:1,
+		// 	name:'javascript',
+		// 	level:4,
+		// 	active:true
+		// },{
+		// 	id:4,
+		// 	name:'JQuery',
+		// 	level:1,
+		// 	active:false
+		// }]
+		// function output(Arr){
+		// // 需要实现的代码
+	 //  // 1. 如果 id 重复，去除 level 值小的一项
+	 //  // 2. 属性 acitive 为 true 的项目排行靠前
+	 //  // 3. 属性 acitive 相同时，level 高的靠前
+	 //  // 4. 返回项目格式为 名称-等级 的字符串
+	 //  // return ...
+	   
+	 
+			
+		// }
+>>>>>>> e33482a9f3756133bda45329ee325ae2a5cd73f8
+
+		// output(Stacks);
+// const Series = [{
+//   name: 'Web',
+//   courses: [{
+//     name: 'HTML',
+//     lessons: [{
+//       name: 'HTML Lesson 1'
+//     },{
+//       name: 'HTML Lesson 2'
+//     },{
+//       name: 'HTML Lesson 3'
+//     }]
+//   },{
+//     name: 'CSS',
+//     lessons: [{
+//       name: 'CSS Lesson 1'
+//     },{
+//       name: 'CSS Lesson 2'
+//     },{
+//       name: 'CSS Lesson 3'
+//     },{
+//       name: 'CSS Lesson 4'
+//     }]
+//   },{
+//     name: 'JavaScript',
+//     lessons: [{
+//       name: 'JavaScript Lesson 1'
+//     },{
+//       name: 'JavaScript Lesson 2'
+//     }]
+//   }]
+// },{
+//   name: 'PHP',
+//   courses: [{
+//     name: 'Linux',
+//     lessons: [{
+//       name: 'Linux Lesson 1'
+//     },{
+//       name: 'Linux Lesson 2'
+//     }]
+//   },{
+//     name: 'MySQL',
+//     lessons: [{
+//       name: 'MySQL Lesson 1'
+//     },{
+//       name: 'MySQL Lesson 2'
+//     },{
+//       name: 'MySQL Lesson 3'
+//     },{
+//       name: 'MySQL Lesson 4'
+//     }]
+//   },{
+//     name: 'Nginx',
+//     lessons: [{
+//       name: 'Nginx Lesson 1'
+//     },{
+//       name: 'Nginx Lesson 2'
+//     },{
+//       name: 'Nginx Lesson 3'
+//     },{
+//       name: 'Nginx Lesson 4'
+//     }]
+//   }]
+// }]
+
+// function output3(Series){
+//   // 返回每个系列名称，及每个系列一共有多少个课（lesson 的总数）;
+//   // ...
+//   let  resultArr = [];
+//   Series.forEach (data =>{
+//   	let tmpObj = { };
+//   	let courses = data.courses;
+//   	let count = 0;
+//   	courses.forEach(item => {
+//   		count =+ item.lessons.length;
+//   	})
+//   	tmpObj['name'] = data.name;
+//   	tmpObj['count'] = count;
+//   	resultArr.push(tmpObj);
+//   })
+//   console.log(resultArr);
+// }
+// output3(Series);
+// 随机生成长度为 10 的数组。
+// 每项的类型为 object 对象
+// 其 x 属性的值 大于或等于 5 小于 12
+// 其 y 属性的值 大于或等于 12 少于 18
+ 
 </script>
 </body>
 
