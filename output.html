@@ -2,90 +2,208 @@
 <html>
 <head>
 	<title>output数组重组算法</title>
-	<script type="text/javascript">
-		// const Stacks[
-		// {
-		// 	id:1,
-		// 	name:'javascript',
-		// 	level:1,
-		// 	active:true
-		// },{
-		// 	id:2,
-		// 	name:'css',
-		// 	level:3,
-		// 	active:false
-		// },{
-		// 	id:3,
-		// 	name:'HTML',
-		// 	level:2,
-		// 	active:true
-		// },{
-		// 	id:1,
-		// 	name:'javascript',
-		// 	level:4,
-		// 	active:true
-		// },{
-		// 	id:4,
-		// 	name:'JQuery',
-		// 	level:1,
-		// 	active:false
-		// }]
-		// function output(Arr){
-		// 	let newArrary=[];
-		// }
-		// output(Stacks);
-		const myStacks = [{
-			id:1,
-			name: 'javascript',
-			level:2,
-		},{
-			id:2,
-			name: 'css',
-			level:1,
-		},{
-			id:4,
-			name:'JQuery',
-			level:1,
-		}]
-		const jobStacks = [{
+<script type="text/javascript">
+	/* const myStacks = [{
+  id: 1,
+  name: 'JavaScript',
+  level: 2,
+},{
+  id: 2,
+  name: 'CSS',
+  level: 1,
+},{
+  id: 4,
+  name: 'JQuery',
+  level: 1,
+}]
+
+const jobStacks = [{
+  id: 1,
+  name: 'JavaScript',
+  level: 1,
+},{
+  id: 2,
+  name: 'CSS',
+  level: 3,
+},{
+  id: 3,
+  name: 'HTML',
+  level: 2,
+}]
+
+function output(Arr1,Arr2){
+  // 1. 比较 Arr1，Arr2 两个数组，返回一个新数组 resultArr
+  // 2. resultArr 中包含 Arr2 中的所有项目
+  // 3. 如果 resultArr 中的项目 id 在 Arr1 中存在
+  //    且其 level 大于 resultArr项目中的level
+  //    则其 active 熟悉值为 true，否则为 false
+  resultArr = Arr2.map(data => {
+  	let id = data.id;
+  	let name = data.name;
+  	let level = data.level;
+  	let active = Arr1.some(item => item.id == data.id && item.level > data.level)
+  	return {id, name, level, active}
+  })
+  console.log(resultArr);
+}
+output(myStacks,jobStacks);*/
+		/*const Stacks=[
+		{
 			id:1,
 			name:'javascript',
 			level:1,
+			active:true
 		},{
 			id:2,
 			name:'css',
 			level:3,
+			active:false
 		},{
 			id:3,
 			name:'HTML',
 			level:2,
-		}]
-		function output(Arr1,Arr2){
-				 // 1. 比较 Arr1，Arr2 两个数组，返回一个新数组 resultArr
-				  // 2. resultArr 中包含 Arr2 中的所有项目
-				  // 3. 如果 resultArr 中的项目 id 在 Arr1 中存在
-				  //    且其 level 大于 resultArr项目中的level
-				  //    则其 active 熟悉值为 true，否则为 false
-				  let resultArr = Arr2;
-				  Arr2.map(data => {
-				  	let id = data.id;
-				  	let name = data.name;
-				  	let level = data.level;
-				  	let active = Arr1.some(item => item.id == data.id && item.level > data.level) 
-				  	if (active){
-				  		data['active'] = true;
-				  		Arr1.push(data);
-				  	}else{
-				  		data['active'] = false;
-				  		Arr1.push(data);
-				  	}
-				  	return{id, name, level,active}
-				  })
-				  console.log(resultArr);	
-		}
-		output(myStacks,jobStacks);
- 			
-		
+			active:true
+		},{
+			id:1,
+			name:'javascript',
+			level:4,
+			active:true
+		},{
+			id:4,
+			name:'JQuery',
+			level:1,
+			active:false
+		}] 
+		function output(Arr){
+	// 需要实现的代码
+  // 1. 如果 id 重复，去除 level 值小的一项
+  // 2. 属性 acitive 为 true 的项目排行靠前
+  // 3. 属性 acitive 相同时，level 高的靠前
+  // 4. 返回项目格式为 名称-等级 的字符串
+  // return ...
+	let resultArr = [];
+	Arr.forEach(data =>{
+		let isMax = !Arr.some(item => item.id === data.id && data.level <item.level);
+		console.log(isMax);
+		let noRepeat = resultArr.every(item => item.id !== data.id);
+		isMax && noRepeat && resultArr.push(data);
+	})
+	console.log(resultArr)
+	let activeArr = resultArr.filter(data => data.active == true).sort((a,b)=> a.level - b.level);
+	let noActiveArr = resultArr.filter(data => data.active == false).sort(function(a,b){
+		return a.level -b.level;
+	});
+	let newconcat = activeArr.concat(noActiveArr);
+	let	newArr = newconcat.map(data => data.name + '-' +data.level);
+	console.log(newArr);
+	return newArr;
+}
+output(Stacks);*/
+
+// const Series = [{
+//   name: 'Web',
+//   courses: [{
+//     name: 'HTML',
+//     lessons: [{
+//       name: 'HTML Lesson 1'
+//     },{
+//       name: 'HTML Lesson 2'
+//     },{
+//       name: 'HTML Lesson 3'
+//     }]
+//   },{
+//     name: 'CSS',
+//     lessons: [{
+//       name: 'CSS Lesson 1'
+//     },{
+//       name: 'CSS Lesson 2'
+//     },{
+//       name: 'CSS Lesson 3'
+//     },{
+//       name: 'CSS Lesson 4'
+//     }]
+//   },{
+//     name: 'JavaScript',
+//     lessons: [{
+//       name: 'JavaScript Lesson 1'
+//     },{
+//       name: 'JavaScript Lesson 2'
+//     }]
+//   }]
+// },{
+//   name: 'PHP',
+//   courses: [{
+//     name: 'Linux',
+//     lessons: [{
+//       name: 'Linux Lesson 1'
+//     },{
+//       name: 'Linux Lesson 2'
+//     }]
+//   },{
+//     name: 'MySQL',
+//     lessons: [{
+//       name: 'MySQL Lesson 1'
+//     },{
+//       name: 'MySQL Lesson 2'
+//     },{
+//       name: 'MySQL Lesson 3'
+//     },{
+//       name: 'MySQL Lesson 4'
+//     }]
+//   },{
+//     name: 'Nginx',
+//     lessons: [{
+//       name: 'Nginx Lesson 1'
+//     },{
+//       name: 'Nginx Lesson 2'
+//     },{
+//       name: 'Nginx Lesson 3'
+//     },{
+//       name: 'Nginx Lesson 4'
+//     }]
+//   }]
+// }]
+
+// function output3(Series){
+//   // 返回每个系列名称，及每个系列一共有多少个课（lesson 的总数）;
+//   // ...
+//    let resultArr = [];
+//   Series.forEach(data =>{
+//   	let newArr = [];
+//   	let count = 0;
+//     let courses = data.courses;
+//   	courses.forEach(item => {
+//   		count += item.lessons.length;
+//   	})
+//   	newArr['name'] = data.name;
+//   	newArr['count'] = count;
+//   	resultArr.push(newArr);
+//   })
+//   console.log(resultArr);
+// }
+// 	output3(Series)
+
+
+
+// 随机生成长度为 10 的数组。
+//   每项的类型为 object 对象
+//   其 x 属性的值 大于或等于 5 小于 12
+//   其 y 属性的值 大于或等于 12 少于 18
+
+    function getNum(){
+      let randomArray = [];
+      let length = 10;
+      for(let i = 0; i<length; i++){
+        let  radommin = 5 + Math.floor(Math.random()*7);
+        let radommax =  12 + Math.floor(Math.random()*6);
+        let newArr ={};
+        newArr['x'] = radommin;
+        newArr['y'] = radommax;
+        randomArray.push(newArr);
+      }
+      console.log(randomArray);
+    }
+    getNum();
 	</script>
 </head>
 <body>
