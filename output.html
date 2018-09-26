@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>output数组重组算法</title>
-<<<<<<< HEAD
+	<title></title>
+</head>
+<body>
 <script type="text/javascript">
-	/* const myStacks = [{
+const myStacks = [{
   id: 1,
   name: 'JavaScript',
   level: 2,
@@ -47,58 +48,36 @@ function output(Arr1,Arr2){
   })
   console.log(resultArr);
 }
-output(myStacks,jobStacks);*/
-		/*const Stacks=[
-		{
-			id:1,
-			name:'javascript',
-			level:1,
-			active:true
-=======
-	<script type="text/javascript">
-		/*const myStacks = [{
-			id:1,
-			name: 'javascript',
-			level:2,
-		},{
-			id:2,
-			name: 'css',
-			level:1,
-		},{
-			id:4,
-			name:'JQuery',
-			level:1,
-		}]
-		const jobStacks = [{
-			id:1,
-			name:'javascript',
-			level:1,
->>>>>>> e33482a9f3756133bda45329ee325ae2a5cd73f8
-		},{
-			id:2,
-			name:'css',
-			level:3,
-<<<<<<< HEAD
-			active:false
-=======
->>>>>>> e33482a9f3756133bda45329ee325ae2a5cd73f8
-		},{
-			id:3,
-			name:'HTML',
-			level:2,
-<<<<<<< HEAD
-			active:true
-		},{
-			id:1,
-			name:'javascript',
-			level:4,
-			active:true
-		},{
-			id:4,
-			name:'JQuery',
-			level:1,
-			active:false
-		}] 
+output(myStacks,jobStacks);
+
+
+const Stacks=[
+	{
+		id:1,
+		name:'javascript',
+		level:1,
+		active:true
+	},{
+		id:2,
+		name:'css',
+		level:3,
+		active:false
+	},{
+		id:3,
+		name:'HTML',
+		level:2,
+		active:true
+	},{
+		id:1,
+		name:'javascript',
+		level:4,
+		active:true
+	},{
+		id:4,
+		name:'JQuery',
+		level:1,
+		active:false
+	}] 
 		function output(Arr){
 	// 需要实现的代码
   // 1. 如果 id 重复，去除 level 值小的一项
@@ -115,190 +94,99 @@ output(myStacks,jobStacks);*/
 	})
 	console.log(resultArr)
 	let activeArr = resultArr.filter(data => data.active == true).sort((a,b)=> a.level - b.level);
-	let noActiveArr = resultArr.filter(data => data.active == false).sort(function(a,b){
-		return a.level -b.level;
-	});
+	let noActiveArr = resultArr.filter(data => data.active == false).sort((a,b) => a.level -b.level);
 	let newconcat = activeArr.concat(noActiveArr);
 	let	newArr = newconcat.map(data => data.name + '-' +data.level);
 	console.log(newArr);
 	return newArr;
 }
-output(Stacks);*/
+output(Stacks);
 
-=======
-		}]
-		function output(Arr1,Arr2){
-	//  1. 比较 Arr1，Arr2 两个数组，返回一个新数组 resultArr
-	//  2. resultArr 中包含 Arr2 中的所有项目
-	// 3. 如果 resultArr 中的项目 id 在 Arr1 中存在
-	//    且其 level 大于 resultArr项目中的level
-	//    则其 active 熟悉值为 true，否则为false
-	let resultArr = [];
-	resultArr = Arr2.map(function(elem){
-		let newelem = [];
-		newelem = elem;
-		let tmp = Arr1.some(item => item.id == newelem.id && item.level > newelem.level);
-		if (tmp){
-			newelem['active'] = true;
-		}else{
-			newelem['active'] = false;
-		}
-		return newelem;	
-	})
-	console.log(resultArr);
-	console.log(Arr1);
-	console.log(Arr2);
-	}
-	output(myStacks,jobStacks);*/
 
-		// const Stacks[
-		// {
-		// 	id:1,
-		// 	name:'javascript',
-		// 	level:1,
-		// 	active:true
-		// },{
-		// 	id:2,
-		// 	name:'css',
-		// 	level:3,
-		// 	active:false
-		// },{
-		// 	id:3,
-		// 	name:'HTML',
-		// 	level:2,
-		// 	active:true
-		// },{
-		// 	id:1,
-		// 	name:'javascript',
-		// 	level:4,
-		// 	active:true
-		// },{
-		// 	id:4,
-		// 	name:'JQuery',
-		// 	level:1,
-		// 	active:false
-		// }]
-		// function output(Arr){
-		// // 需要实现的代码
-	 //  // 1. 如果 id 重复，去除 level 值小的一项
-	 //  // 2. 属性 acitive 为 true 的项目排行靠前
-	 //  // 3. 属性 acitive 相同时，level 高的靠前
-	 //  // 4. 返回项目格式为 名称-等级 的字符串
-	 //  // return ...
-		// 	let unqueArr = [];
-		// 	Arr.forEach(data =>{
-		// 		let tmpIndex = null;
-		// 		let tmpData = null;
-		// 		let hasRepeat = false;
+const Series = [{
+  name: 'Web',
+  courses: [{
+    name: 'HTML',
+    lessons: [{
+      name: 'HTML Lesson 1'
+    },{
+      name: 'HTML Lesson 2'
+    },{
+      name: 'HTML Lesson 3'
+    }]
+  },{
+    name: 'CSS',
+    lessons: [{
+      name: 'CSS Lesson 1'
+    },{
+      name: 'CSS Lesson 2'
+    },{
+      name: 'CSS Lesson 3'
+    },{
+      name: 'CSS Lesson 4'
+    }]
+  },{
+    name: 'JavaScript',
+    lessons: [{
+      name: 'JavaScript Lesson 1'
+    },{
+      name: 'JavaScript Lesson 2'
+    }]
+  }]
+},{
+  name: 'PHP',
+  courses: [{
+    name: 'Linux',
+    lessons: [{
+      name: 'Linux Lesson 1'
+    },{
+      name: 'Linux Lesson 2'
+    }]
+  },{
+    name: 'MySQL',
+    lessons: [{
+      name: 'MySQL Lesson 1'
+    },{
+      name: 'MySQL Lesson 2'
+    },{
+      name: 'MySQL Lesson 3'
+    },{
+      name: 'MySQL Lesson 4'
+    }]
+  },{
+    name: 'Nginx',
+    lessons: [{
+      name: 'Nginx Lesson 1'
+    },{
+      name: 'Nginx Lesson 2'
+    },{
+      name: 'Nginx Lesson 3'
+    },{
+      name: 'Nginx Lesson 4'
+    }]
+  }]
+}]
 
-		// 		unqueArr.forEach((u_data,index) =>{
-		// 			if(u_data.id === data.id){
-		// 				hasRepeat = true;
-		// 				tmpIndex = index;
-		// 				tmpStack = u_data;
-		// 			}
-		// 		})
-		// 		if(!hasRepeat){
-		// 			unqueArr.push(data);
-		// 		}else if(tmpStack.level <data.level){
-		// 			unqueArr.splice(tmpIndex,1,data);
-		// 		}
-		// 	})
-		// 	let activeArr = unqueArr.filter(data => data.active).sort((a,b) =>a.level < b.level);
-		// 	let noActionArr = unqueArr.filter(data => !data.active).sort((a,b) => a.level < b.level);
+function output3(Series){
+  // 返回每个系列名称，及每个系列一共有多少个课（lesson 的总数）;
+  // ...
+  let resultArr = [];
+  Series.forEach(data =>{
+  	let newArr = [];
+  	let count = 0;
+    let courses = data.courses;
+  	courses.forEach(item => {
+  		count += item.lessons.length;
+  	})
+  	newArr['name'] = data.name;
+  	newArr['count'] = count;
+  	resultArr.push(newArr);
+  })
+  console.log(resultArr);
+}
+	output3(Series)
 
-		// 	let resultArr = active.concat(noActionArr).map(data => data.name + '-' + data.level);
-		// 	return resultArr;
-		// 	console.log(resultArr);
 
-		// }
-
-		// output(Stacks);
- 			// output(Stacks);
->>>>>>> e33482a9f3756133bda45329ee325ae2a5cd73f8
-// const Series = [{
-//   name: 'Web',
-//   courses: [{
-//     name: 'HTML',
-//     lessons: [{
-//       name: 'HTML Lesson 1'
-//     },{
-//       name: 'HTML Lesson 2'
-//     },{
-//       name: 'HTML Lesson 3'
-//     }]
-//   },{
-//     name: 'CSS',
-//     lessons: [{
-//       name: 'CSS Lesson 1'
-//     },{
-//       name: 'CSS Lesson 2'
-//     },{
-//       name: 'CSS Lesson 3'
-//     },{
-//       name: 'CSS Lesson 4'
-//     }]
-//   },{
-//     name: 'JavaScript',
-//     lessons: [{
-//       name: 'JavaScript Lesson 1'
-//     },{
-//       name: 'JavaScript Lesson 2'
-//     }]
-//   }]
-// },{
-//   name: 'PHP',
-//   courses: [{
-//     name: 'Linux',
-//     lessons: [{
-//       name: 'Linux Lesson 1'
-//     },{
-//       name: 'Linux Lesson 2'
-//     }]
-//   },{
-//     name: 'MySQL',
-//     lessons: [{
-//       name: 'MySQL Lesson 1'
-//     },{
-//       name: 'MySQL Lesson 2'
-//     },{
-//       name: 'MySQL Lesson 3'
-//     },{
-//       name: 'MySQL Lesson 4'
-//     }]
-//   },{
-//     name: 'Nginx',
-//     lessons: [{
-//       name: 'Nginx Lesson 1'
-//     },{
-//       name: 'Nginx Lesson 2'
-//     },{
-//       name: 'Nginx Lesson 3'
-//     },{
-//       name: 'Nginx Lesson 4'
-//     }]
-//   }]
-// }]
-
-// function output3(Series){
-//   // 返回每个系列名称，及每个系列一共有多少个课（lesson 的总数）;
-//   // ...
-<<<<<<< HEAD
-//    let resultArr = [];
-//   Series.forEach(data =>{
-//   	let newArr = [];
-//   	let count = 0;
-//     let courses = data.courses;
-//   	courses.forEach(item => {
-//   		count += item.lessons.length;
-//   	})
-//   	newArr['name'] = data.name;
-//   	newArr['count'] = count;
-//   	resultArr.push(newArr);
-//   })
-//   console.log(resultArr);
-// }
-// 	output3(Series)
 
 
 
@@ -307,9 +195,9 @@ output(Stacks);*/
 //   其 x 属性的值 大于或等于 5 小于 12
 //   其 y 属性的值 大于或等于 12 少于 18
 
-    function getNum(){
-      let randomArray = [];
-      let length = 10;
+  function getNum(){
+    let randomArray = [];
+    let length = 10;
       for(let i = 0; i<length; i++){
         let  radommin = 5 + Math.floor(Math.random()*7);
         let radommax =  12 + Math.floor(Math.random()*6);
@@ -321,27 +209,7 @@ output(Stacks);*/
       console.log(randomArray);
     }
     getNum();
-=======
-//   let  resultArr = [];
-//   Series.forEach (data =>{
-//   	let tmpObj = { };
-//   	let courses = data.courses;
-//   	let count = 0;
-//   	courses.forEach(item => {
-//   		count =+ item.lessons.length;
-//   	})
-//   	tmpObj['name'] = data.name;
-//   	tmpObj['count'] = count;
-//   	resultArr.push(tmpObj);
-//   })
-//   console.log(resultArr);
-// }
-// output3(Series);
-		
->>>>>>> e33482a9f3756133bda45329ee325ae2a5cd73f8
-	</script>
-</head>
-<body>
 
+</script>
 </body>
 </html>
